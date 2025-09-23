@@ -20,7 +20,7 @@
 
     <!-- Nav Item - Kategori -->
     <li class="nav-item active">
-        <a class="nav-link" href="archive">
+        <a class="nav-link" href="category">
             <i class="fas fa-fw fa-cog"></i>
             <span>Kategori</span></a>
     </li>
