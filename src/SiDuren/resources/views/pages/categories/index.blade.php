@@ -36,10 +36,16 @@
                                             <td>{{ $item->description }}</td>
                                             <td>
                                                 <div>
-                                                    <a href="/category/{{ $item->id }}"
-                                                        class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"><i
-                                                            class="text-white-50"></i>Hapus</a>
-                                                    <a href="/category/{{ $item->id }}"
+                                                    <form id="delete-form-{{ $item->id }}"
+                                                        action="{{ route('category.destroy', $item->id) }}" method="POST"
+                                                        class="d-inline">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger shadow-sm">
+                                                            <i class="text-white-50"></i> Hapus
+                                                        </button>
+                                                    </form>
+                                                    <a href="/category/{{ $item->id }}/edit"
                                                         class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                                             class="text-white-50"></i>Edit</a>
                                                 </div>
@@ -58,6 +64,6 @@
     {{-- Add Button --}}
     <div class="mt-4">
         <a href="category/create" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-                class="fas fa-plus fa-sm text-white-50"></i>Tambah Kategori Baru</a>
+                class="fas fa-plus fa-sm text-white-50"></i>&nbsp;&nbsp;Tambah Kategori Baru</a>
     </div>
 @endsection

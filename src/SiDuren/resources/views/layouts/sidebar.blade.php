@@ -12,22 +12,22 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Arsip -->
-    <li class="nav-item active">
-        <a class="nav-link" href="archive">
+    <li class="nav-item {{ Request::is('archive*') ? 'active' : '' }}">
+        <a class="nav-link" href="/archive">
             <i class="fas fa-fw fa-star"></i>
             <span>Arsip</span></a>
     </li>
 
     <!-- Nav Item - Kategori -->
-    <li class="nav-item active">
-        <a class="nav-link" href="category">
+    <li class="nav-item {{ Request::is('category*') ? 'active' : '' }}">
+        <a class="nav-link" href="/category">
             <i class="fas fa-fw fa-cog"></i>
             <span>Kategori</span></a>
     </li>
 
     <!-- Nav Item - About -->
-    <li class="nav-item active">
-        <a class="nav-link" href="archive">
+    <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
+        <a class="nav-link" href="/archive">
             <i class="fas fa-fw fa-info-circle"></i>
             <span>About</span></a>
     </li>
