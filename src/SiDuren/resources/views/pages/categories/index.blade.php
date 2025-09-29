@@ -36,21 +36,17 @@
                                             <td>{{ $item->description }}</td>
                                             <td>
                                                 <div>
-                                                    <form id="delete-form-{{ $item->id }}"
-                                                        action="{{ route('category.destroy', $item->id) }}" method="POST"
-                                                        class="d-inline">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-sm btn-danger shadow-sm">
-                                                            <i class="text-white-50"></i> Hapus
-                                                        </button>
-                                                    </form>
+                                                    <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
+                                                        data-target="#confirmationDelete-{{ $item->id }}">
+                                                        Hapus
+                                                    </button>
                                                     <a href="/category/{{ $item->id }}/edit"
                                                         class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                                             class="text-white-50"></i>Edit</a>
                                                 </div>
                                             </td>
                                         </tr>
+                                        @include('pages.categories.confirmation-delete')
                                     @endforeach
                                 </tbody>
                             @endif
