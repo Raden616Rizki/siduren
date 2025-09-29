@@ -1,7 +1,7 @@
 <div class="modal fade" id="confirmationDelete-{{ $item->id }}" tabindex="-1" role="dialog"
     aria-labelledby="confirmationDeleteLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <form action="/category/{{ $item->id }}" method="POST">
+        <form action="/archive/{{ $item->id }}" method="POST">
             @csrf
             @method('DELETE')
             <div class="modal-content">
@@ -12,7 +12,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Apakah Anda yakin ingin menghapus kategori surat ini? Seluruh arsip dengan kategori ini akan ikut terhapus.
+                    Apakah Anda yakin ingin menghapus arsip surat ini?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
