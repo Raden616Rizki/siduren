@@ -33,4 +33,6 @@ Route::prefix('archive')->name('category.')->group(function () {
     Route::get('/{id}', [ArchiveController::class, 'show'])->name('show');
 });
 
-
+Route::get('/about', function () {
+    return view('about');
+});

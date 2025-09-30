@@ -27,7 +27,7 @@
 
     <!-- Nav Item - About -->
     <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
-        <a class="nav-link" href="/archive">
+        <a class="nav-link" href="/about">
             <i class="fas fa-fw fa-info-circle"></i>
             <span>About</span></a>
     </li>
