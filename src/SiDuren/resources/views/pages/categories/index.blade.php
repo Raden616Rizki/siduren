@@ -3,7 +3,26 @@
 @section('content')
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4 mt-3">
-        <h1 class="h3 mb-0 text-gray-800">Kategori</h1>
+        <div>
+            <h1 class="h3 mb-0 text-gray-800">Kategori Surat</h1>
+            <p class="mt-2">Berikut ini adalah kategori yang dapat digunakan untuk melebeli surat.<br>
+                Klik <b>"Tambah"</b> pada kolom aksi untuk menambahkan kategori baru.</p>
+        </div>
+    </div>
+
+    {{-- Search Form --}}
+    <div class="mb-3">
+        <form action="/category" method="GET" class="d-none d-sm-inline-block form-inline mr-auto mw-100 navbar-search">
+            <div class="input-group" style="width: 440px">
+                <input type="text" name="search" class="form-control bg-white shadow-sm border-0 small"
+                    placeholder="Cari Nama Kategori atau Keterangan" value="{{ request('search') }}">
+                <div class="input-group-append">
+                    <button class="btn btn-primary shadow-sm" type="submit">
+                        <i class="fas fa-search fa-sm"></i> Cari
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
 
     {{-- Table --}}

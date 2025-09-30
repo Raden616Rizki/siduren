@@ -9,13 +9,24 @@ use Illuminate\Support\Facades\Storage;
 
 class ArchiveController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $archives = Archive::all();
+        $search = $request->input('search');
+
+        $archives = Archive::query()
+            ->when($search, function ($query, $search) {
+                $query->where('letter_number', 'like', "%{$search}%")
+                    ->orWhere('title', 'like', "%{$search}%");
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         return view('pages.archives.index', [
-            'archives' => $archives
+            'archives' => $archives,
+            'search' => $search,
         ]);
     }
+
 
     public function show($id)
     {
